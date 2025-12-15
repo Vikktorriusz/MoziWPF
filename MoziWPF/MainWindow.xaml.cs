@@ -109,6 +109,18 @@ namespace MoziWPF
             dataGrid.ItemsSource = atlagosHelyek;
             dataGrid.Items.Refresh();
         }
+        private void _3dfilmek(object sender, RoutedEventArgs e)
+        {
+            List<Mozi> _3dfilmek = new List<Mozi>();
+            foreach (var mozi in mozifilmek)
+            {
+                if (mozi._3D == true)
+                    _3dfilmek.Add(mozi);
+            }
+            dataGrid.ItemsSource = _3dfilmek;
+            dataGrid.Items.Refresh();
+        }
+
 
     }
 }
