@@ -100,15 +100,9 @@ namespace MoziWPF
 
             int atlagosHely = osszesHely / filmekSzama;
 
-            List<Mozi> atlagosHelyek = new List<Mozi>();
-            foreach (var mozi in mozifilmek)
-            {
-                if (mozi.Szabadhelyek == atlagosHely)
-                    atlagosHelyek.Add(mozi);
-            }
-            dataGrid.ItemsSource = atlagosHelyek;
-            dataGrid.Items.Refresh();
+            MessageBox.Show($"Átlagos szabad helyek száma: {atlagosHely}");
         }
+
         private void _3dfilmek(object sender, RoutedEventArgs e)
         {
             List<Mozi> _3dfilmek = new List<Mozi>();
