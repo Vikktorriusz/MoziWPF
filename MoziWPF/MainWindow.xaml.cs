@@ -114,6 +114,26 @@ namespace MoziWPF
             dataGrid.ItemsSource = _3dfilmek;
             dataGrid.Items.Refresh();
         }
+        private void Kereses(object sender, RoutedEventArgs e)
+        {
+            string cim = tbCimKereses.Text;
+            bool csak3D = cb3D.IsChecked == true;
+
+            List<Mozi> talalatok = new List<Mozi>();
+
+            foreach (var mozi in mozifilmek)
+            {
+                if (mozi.Cím.Contains(cim) && (!csak3D || mozi._3D))
+                {
+                    talalatok.Add(mozi);
+                }
+            }
+
+            dataGrid.ItemsSource = talalatok;
+            dataGrid.Items.Refresh();
+        }
+
+
 
 
     }
