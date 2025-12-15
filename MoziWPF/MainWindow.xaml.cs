@@ -87,5 +87,28 @@ namespace MoziWPF
             dataGrid.ItemsSource = legnepszeru;
             dataGrid.Items.Refresh();
         }
+        private void atlaghely(object sender, RoutedEventArgs e)
+        {
+            int osszesHely = 0;
+            int filmekSzama = 0;
+
+            foreach (var mozi in mozifilmek)
+            {
+                osszesHely += mozi.Szabadhelyek;
+                filmekSzama++;
+            }
+
+            int atlagosHely = osszesHely / filmekSzama;
+
+            List<Mozi> atlagosHelyek = new List<Mozi>();
+            foreach (var mozi in mozifilmek)
+            {
+                if (mozi.Szabadhelyek == atlagosHely)
+                    atlagosHelyek.Add(mozi);
+            }
+            dataGrid.ItemsSource = atlagosHelyek;
+            dataGrid.Items.Refresh();
+        }
+
     }
 }
