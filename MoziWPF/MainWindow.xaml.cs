@@ -65,5 +65,16 @@ namespace MoziWPF
                 dataGrid.Items.Refresh();
             }
         }
+        private void vanhely(object sender, RoutedEventArgs e)
+        {
+            List<Mozi> csakholvanhely= new List<Mozi>();
+            foreach (var mozi in mozifilmek)
+            {
+                if(mozi.Szabadhelyek>0)
+                    csakholvanhely.Add(mozi);
+            }
+            dataGrid.ItemsSource=csakholvanhely;
+            dataGrid.Items.Refresh();
+        }
     }
 }
